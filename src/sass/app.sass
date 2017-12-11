@@ -38,7 +38,7 @@ p
   text-align: left
 .textcenter
   text-align: center
-form.addForm
+.addForm
   display: block
   margin: 0 auto
   width: 190px
@@ -68,3 +68,44 @@ form.addForm
   margin: 10px auto
   p.formtxt
     text-align: right
+.todolist ul
+  background: white
+  font-size: 1.2em
+  font-family: 'Consolas', sans-serif
+  list-style: none
+  width: 600px
+  padding: 0
+  margin: 15px auto
+  border: 1px solid lightgrey
+  border-radius: 10px 10px 0 0
+  box-shadow: 0 1px 1px grey
+  text-align: left
+  box-sizing: border-box
+  li, li *
+    height: 80px
+    line-height: 80px
+    margin: 0
+  li
+    border-bottom: 3px solid lightgrey
+    &:last-child
+      border: none
+    &:first-child span.id
+      border-radius: 10px 0 0 0
+    &:last-child span.id
+      border-radius: 0
+    span.id
+      float: left
+      font-size: 30px
+      color: white
+      background: black
+      font-weight: 700
+      width: 100px
+      text-align: center
+      border-right: 1px solid lightgrey
+    span.txt
+      display: block
+      color: black
+      overflow-y: hidden
+      overflow-x: scroll
+      white-space: nowrap
+      padding: 0 15px 

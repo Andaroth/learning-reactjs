@@ -12,7 +12,7 @@ class App extends Component {
         <ToDoForm />
         <ToDoList />
       </div>
-    );
-  }
+    ); // return() end
+  } // render end
 } // App
 export default App;
