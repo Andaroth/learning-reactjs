@@ -1,15 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
+//import ToDoForm from './todoform.jsx';
 
-export default class ToDoList extends React.Component {
+export default class ToDoList extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      list:[
-        {done:0, txt:"Premier message qui est très long juste pour voir"},
-        {done:0, txt:"Second message"},
-        {done:0, txt:"Troisième message"}
-      ] // list end
-    } // state end
+    this.actualJSON = /*ToDoForm.loadJason("./list.json",function(res){
+       return JSON.parse(res);
+    }); */[
+        {id:0,done:0, txt:"Premier message qui est très long juste pour voir"},
+        {id:1,done:0, txt:"Second message"},
+        {id:2,done:1, txt:"Troisième message"}
+      ] // list end */
   }
   render() {
     return(
@@ -17,9 +18,10 @@ export default class ToDoList extends React.Component {
         <ul>
           {
             // Mapper dans "this.state" pour écrire toutes les entrées
-            this.state.list.map((i) => {
+            this.actualJSON.map((i) => {
               var done = i.done;
               var txt = i.txt;
+              var id = i.id;
               switch (done) {
                 case 0:
                   done = 'ToDo';
@@ -32,7 +34,7 @@ export default class ToDoList extends React.Component {
                   break;
               } // switch end
               return(
-                <li>
+                <li id={id} key={id}>
                   <span className="id">{done}</span>
                   <span className="txt">{txt}</span>
                 </li>

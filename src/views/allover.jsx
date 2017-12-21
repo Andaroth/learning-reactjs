@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-export default class AllOver extends React.Component {
+export default class AllOver extends Component {
   render() {
     return(
       <div className="linear_black allover">
