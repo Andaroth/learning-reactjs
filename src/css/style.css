@@ -1,0 +1,71 @@
+/* Animations */
+@import url(./keyframes.css);
+/* Allover */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+.main {
+  text-align: center; }
+
+/* LayOuts  */
+.linear,
+.linear_black {
+  padding: 20px;
+  text-align: center; }
+
+.linear_black {
+  background: #222;
+  color: aliceblue; }
+
+/* Elems */
+h1 {
+  font-size: 1.5em; }
+  h1:before {
+    content: "";
+    display: block;
+    margin: 0 auto 10px auto;
+    position: relative;
+    background-image: url("../img/evidence_face.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    height: 70px;
+    width: 70px;
+    animation: infSpin infinite 3s linear; }
+
+ul {
+  padding-left: 0;
+  list-style: none; }
+  ul li {
+    margin: 5px auto; }
+
+p {
+  text-align: left; }
+
+.textcenter {
+  text-align: center; }
+
+form.addForm {
+  display: block;
+  margin: 0 auto;
+  width: 190px;
+  height: 35px; }
+  form.addForm input[type=text] {
+    height: 30px;
+    width: 150px;
+    float: left;
+    margin-right: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 0 10px;
+    box-sizing: border-box; }
+  form.addForm button {
+    display: block;
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px; }
+
+/*# sourceMappingURL=style.css.map */

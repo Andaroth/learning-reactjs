@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Tranbé-List",
+  "name": "Gérez vos Berdevoirs avec cette Berapp !",
   "icons": [
     {
       "src": "favicon.ico",
