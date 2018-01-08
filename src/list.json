@@ -1,7 +1,0 @@
-{
-  list:[
-    {done:0, txt:"Premier message qui est très long juste pour voir"},
-    {done:0, txt:"Second message"},
-    {done:0, txt:"Troisième message"}
-  ] // list end
-}

@@ -1,0 +1,17 @@
+[
+  {
+    "id":0,
+    "done":true, 
+    "txt":"Dormir chez un Chinois pour son anniversaire"
+  },
+  {
+    "id":1,
+    "done":false, 
+    "txt":"Utiliser Wix"
+  },
+  {
+    "id":2,
+    "done":false,
+    "txt":"Installer WordPress"
+  }
+]

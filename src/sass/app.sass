@@ -89,11 +89,11 @@ p
     border-bottom: 3px solid lightgrey
     &:last-child
       border: none
-    &:first-child span.id
+    &:first-child span:first-child
       border-radius: 10px 0 0 0
-    &:last-child span.id
+    &:last-child span:first-child
       border-radius: 0
-    span.id
+    span:first-child
       float: left
       font-size: 30px
       color: white
@@ -109,3 +109,7 @@ p
       overflow-x: scroll
       white-space: nowrap
       padding: 0 15px 
+    span.ToDo
+      color: red
+    span.Done
+      color: green
