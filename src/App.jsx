@@ -5,22 +5,23 @@ import AllOver from './views/allover.jsx';
 import ToDoList from './views/todolist.jsx';
 import ToDoForm from './views/todoform.jsx';
 
-var jsonFile = require('./json/list.json');
+const jsonFile = 'https://andaroth.github.io/learning-reactjs/src/json/list.json';
 
 var loadFile = (url) => {
-  var xhr = new XMLHttpRequest();
-  xhr.open('get', url, true);
+  var xhr = new XMLHttpRequest()
+  xhr.open('get', url, true)
+  xhr.responseType = 'json'
   xhr.onreadystatechange = function() {
     var status;
     if (xhr.readyState == 4) { // done
       status = xhr.status;
       if (status == 200) { // okay
         console.log("okay")
-        var result = xhr.responseText;
-        console.log("result : "+result)
-        // this.jsondata = JSON.parse(result);
+        console.log("result : "+xhr.response)
+        this.jsondata = xhr.response;
+        console.log("jsondata1 : "+this.jsondata)
       } else {
-        console.log("cant find !");
+        console.log("cant find !")
       }
     } // readyState=4 end
   } // onreadystatechange end
@@ -30,7 +31,7 @@ var loadFile = (url) => {
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.jsondata = [{}];
+    
     /*this.jsondata = [
       {
         "done":true, 
@@ -46,9 +47,10 @@ export default class App extends Component {
       }
     ] // json end*/
   } // constructor end -------------------------
-  
+  componentWillMount() {
+    console.log("jsondata2 : "+this.jsondata)
+  }
   render() {
-    loadFile(jsonFile);
     return (
       <div className="main">
         <AllOver />
