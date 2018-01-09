@@ -21,15 +21,14 @@ mapThis = (thisList) => {
       }) // map end
     ) // mapThis return end
   } else {
-    return(<li key="no"><p className="center">Please wait while loading... </p></li>)
+    return(<li key="no"><p className="center">Patientez pendant le chargement... </p></li>)
   }
 }
 render() {
   return(
     <div className="todolist">
       <ul id="myList">
-        {
-          this.mapThis(this.props.jsondata)} 
+        {this.mapThis(this.props.jsondata)} 
       </ul>
     </div>
   ) // return end

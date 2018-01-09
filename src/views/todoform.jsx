@@ -5,13 +5,16 @@ constructor(props) {
   super(props)
   // this.eventEmitter = new EventEmitter();
 }
+htmlEntities = (str) => {
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
 addTodo = (e) => {
   e.preventDefault();
   var inputTxt = this.refs.msg.value
   var listToAppend = document.getElementById("myList");
   var childToAppend = document.createElement("li")
   childToAppend.setAttribute("key","ToDo_"+inputTxt)
-  childToAppend.innerHTML = '<span class="ToDo">ToDo</span><span class="txt">'+inputTxt+'</span>';
+  childToAppend.innerHTML = '<span class="ToDo">ToDo</span><span class="txt">'+this.htmlEntities(inputTxt)+'</span>';
   console.log("child : "+childToAppend)
   var itAppend = listToAppend.appendChild(childToAppend);
   this.refs.msg.value = "";
@@ -37,7 +40,6 @@ render() {
         <button type="submit" onClick={this.addTodo.bind(this)}>+</button>
       </form>
     </div>
-
   );
 }
 } // class end -------------------------
