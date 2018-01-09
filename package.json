@@ -6,6 +6,7 @@
     "axios": "^0.17.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "react-firebase": "^2.2.8",
     "react-scripts": "1.0.17",
     "react-xhr": "0.0.7",
     "webpack": "^3.10.0"
