@@ -1,19 +1,20 @@
 import React, {Component} from 'react';
-import Firebase, {connect} from 'firebase';
+// import Firebase from 'firebase';
 
 export default class ToDoList extends Component {
 htmlEntities = (str) => {
   return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 } // function end
-mapThis = (thisList) => {
-  console.log("local mapThis reach")
-  if (thisList) { // Si la liste est chargée
+mapThis(jsondata) {
+  console.log(jsondata)
+  if (jsondata) { // Si la liste est chargée
     return(
-      thisList.map((index) => { // Mapper dans "this.state" pour écrire toutes les entrées
-        var done = index.done, txt = index.txt;
+      jsondata.map((i) => { // Mapper dans "this.state" pour écrire toutes les entrées
+        console.log(i)
+        var done = i.done, txt = i.txt, id = i.id;
         done = !(done) ? 'ToDo' : 'Done';
         return(
-          <li key={index}>
+          <li key={i}>
             <span className={done}>{done}</span>
             <span className="txt">{this.htmlEntities(txt)}</span>
           </li>
@@ -28,7 +29,7 @@ render() {
   return(
     <div className="todolist">
       <ul id="myList">
-        { this.mapThis(this.props.jsondata) }
+        { console.log/*this.mapThis*/(this.props.jsondata) }
       </ul>
     </div>
   ) // return end
