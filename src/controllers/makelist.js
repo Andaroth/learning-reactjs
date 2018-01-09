@@ -10,10 +10,10 @@ mapThis = (thisList) => {
   if (thisList) { // Si la liste est chargée
     return(
       thisList.map((index) => { // Mapper dans "this.state" pour écrire toutes les entrées
-        var done = index.done, txt = index.txt;
+        var done = index.done, txt = index.txt; eid = index.eid;
         done = !(done) ? 'ToDo' : 'Done';
         return(
-          <li key={index}>
+          <li key={eid} id={eid}>
             <span className={done}>{done}</span>
             <span className="txt">{this.htmlEntities(txt)}</span>
           </li>
