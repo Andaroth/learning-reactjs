@@ -12,20 +12,20 @@ htmlEntities = (str) => {
 } // function end
 addTodo(e) {
   e.preventDefault();
-  var txtInput = this.refs.msg.value
+  var txtInput = this.htmlEntities(this.refs.msg.value)
   // var id = this.db.ref().child('/').push().key;
-  var newRef = this.db.ref().push();
+  var eid = this.db.ref().push().key;
   //console.log("eid : "+id)
   this.refs.msg.value = ""
   console.log("test : "+txtInput )
   var newPost = {
     done: false,
-    txt: this.htmlEntities(txtInput),
-    id: newRef.key()
+    txt: txtInput,
+    id: eid
   }
   var updates = {}
-  //updates['/'+id+'/'] = newPost
-  newRef.set(newPost);
+  updates['/'+eid+'/'] = newPost
+  this.db.ref().update(updates); 
 } // add() end
 render() {
   return(
