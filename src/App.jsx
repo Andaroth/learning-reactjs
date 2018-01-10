@@ -31,13 +31,23 @@ componentWillMount() {
     console.log("res : "+res.val())
     this.setState({myList:res.val()})
   });
-} // willmount end
+} // willmount end 
+rendering(){
+  if(this.state.myList){
+    console.log(this.state.myList);
+    return(
+      <ToDoList jsondata={this.state.myList} />
+    )
+  }else{
+    console.log("false");
+  }
+}
 render() {
   return (
     <div className="main">
       <AllOver />
       <ToDoForm />
-      <ToDoList jsondata={this.state.myList} />
+      {this.rendering()}
     </div>
   ); // return() end
 } // render end

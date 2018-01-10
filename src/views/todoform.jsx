@@ -13,19 +13,14 @@ htmlEntities = (str) => {
 addTodo(e) {
   e.preventDefault();
   var txtInput = this.htmlEntities(this.refs.msg.value)
-  // var id = this.db.ref().child('/').push().key;
-  var eid = this.db.ref().push().key;
   //console.log("eid : "+id)
   this.refs.msg.value = ""
   console.log("test : "+txtInput )
   var newPost = {
     done: false,
-    txt: txtInput,
-    id: eid
+    txt: txtInput
   }
-  var updates = {}
-  updates['/'+eid+'/'] = newPost
-  this.db.ref().update(updates); 
+  this.db.ref().push(newPost)
 } // add() end
 render() {
   return(
